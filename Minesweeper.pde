@@ -39,16 +39,16 @@ public void draw ()
 }
 public boolean isWon()
 {
-    //your code here
+
     return false;
 }
 public void displayLosingMessage()
 {
-    //your code here
+    
 }
 public void displayWinningMessage()
 {
-    //your code here
+
 }
 public boolean isValid(int r, int c)
 {
@@ -97,10 +97,21 @@ public class MSButton
           flagged = !flagged;
         if(flagged==false)
           clicked = false;
-        else if (mines.contains(this))
+        if(mouseButton == RIGHT){}
+        else if (mines.contains(this)) //if is mine
           displayLosingMessage();
-        else if (countMines(myRow,myCol) > 0)
+        else if (countMines(myRow,myCol) > 0) //if its non zero and a number
           setLabel(countMines(myRow,myCol));
+         else {
+          flagged = false;
+          for (int i = myRow-1; i < myRow+2; i++)
+            for (int k = myCol-1; k < myCol+2; k++){
+              if (isValid(i,k) && !buttons[i][k].clicked){
+                fill(255);
+                buttons[i][k].mousePressed();
+              }
+            }
+         }
     }
     public void draw () 
     {    
