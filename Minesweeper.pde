@@ -39,12 +39,14 @@ public void draw ()
 }
 public boolean isWon()
 {
-
+for(int i = 0; i < mines.size(); i++)
+  if (mines.get(i).isFlagged())
+    return true;
     return false;
 }
 public void displayLosingMessage()
 {
-    
+  
 }
 public void displayWinningMessage()
 {
@@ -95,7 +97,7 @@ public class MSButton
         clicked = true;
         if(mouseButton==RIGHT)
           flagged = !flagged;
-        if(flagged==false)
+        if(flagged==true)
           clicked = false;
         if(mouseButton == RIGHT){}
         else if (mines.contains(this)) //if is mine
