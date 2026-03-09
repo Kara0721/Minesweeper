@@ -46,7 +46,7 @@ return false;
 }
 public void displayLosingMessage()
 {
-  
+  mines.fill(255,0,0);
 }
 public void displayWinningMessage()
 {
