@@ -42,7 +42,7 @@ public boolean isWon()
 for(int i = 0; i < mines.size(); i++)
   if (mines.get(i).isFlagged())
     return true;
-    return false;
+return false;
 }
 public void displayLosingMessage()
 {
