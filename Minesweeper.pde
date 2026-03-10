@@ -51,6 +51,9 @@ return true;
 }
 public void displayLosingMessage()
 {
+for(int i = 0; i < mines.size(); i++){
+    mines.get(i).clicked = true;
+}
   buttons[NUM_ROWS/2][NUM_COLS/2-4].setLabel("Y");
   buttons[NUM_ROWS/2][NUM_COLS/2-3].setLabel("o");
   buttons[NUM_ROWS/2][NUM_COLS/2-2].setLabel("u");
