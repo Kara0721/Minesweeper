@@ -1,6 +1,6 @@
 import de.bezier.guido.*;
-int NUM_ROWS = 5;
-int NUM_COLS = 5;
+int NUM_ROWS = 10;
+int NUM_COLS = 10;
 private MSButton[][] buttons; //2d array of minesweeper buttons
 private ArrayList <MSButton> mines = new ArrayList(); //ArrayList of just the minesweeper buttons that are mined
 
@@ -13,7 +13,7 @@ void setup ()
     Interactive.make( this );
     
     //your code to initialize buttons goes here
-    buttons = new MSButton[5][5];
+    buttons = new MSButton[NUM_ROWS][NUM_COLS];
     for (int r = 0; r<NUM_ROWS; r++)
       for(int c = 0; c < NUM_COLS; c++)
         buttons[r][c] = new MSButton(r, c);
@@ -22,7 +22,7 @@ void setup ()
 }
 public void setMines()
 {
-  while(mines.size() < 5){
+  while(mines.size() < 10){
  int r = (int)(Math.random()*NUM_ROWS);
  int c = (int)(Math.random()*NUM_COLS);
  if (!mines.contains(buttons[r][c]))
@@ -46,7 +46,14 @@ return false;
 }
 public void displayLosingMessage()
 {
-  mines.fill(255,0,0);
+  buttons[NUM_ROWS/2][NUM_COLS/2-4].setLabel("Y");
+  buttons[NUM_ROWS/2][NUM_COLS/2-3].setLabel("o");
+  buttons[NUM_ROWS/2][NUM_COLS/2-2].setLabel("u");
+  buttons[NUM_ROWS/2][NUM_COLS/2-1].setLabel("");
+  buttons[NUM_ROWS/2][NUM_COLS/2].setLabel("L");
+  buttons[NUM_ROWS/2][NUM_COLS/2+1].setLabel("o");
+  buttons[NUM_ROWS/2][NUM_COLS/2+2].setLabel("s");
+  buttons[NUM_ROWS/2][NUM_COLS/2+3].setLabel("e");
 }
 public void displayWinningMessage()
 {
