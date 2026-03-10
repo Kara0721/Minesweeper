@@ -65,7 +65,14 @@ for(int i = 0; i < mines.size(); i++){
 }
 public void displayWinningMessage()
 {
-
+buttons[NUM_ROWS/2][NUM_COLS/2-4].setLabel("Y");
+  buttons[NUM_ROWS/2][NUM_COLS/2-3].setLabel("o");
+  buttons[NUM_ROWS/2][NUM_COLS/2-2].setLabel("u");
+  buttons[NUM_ROWS/2][NUM_COLS/2-1].setLabel("");
+  buttons[NUM_ROWS/2][NUM_COLS/2].setLabel("W");
+  buttons[NUM_ROWS/2][NUM_COLS/2+1].setLabel("i");
+  buttons[NUM_ROWS/2][NUM_COLS/2+2].setLabel("n");
+  buttons[NUM_ROWS/2][NUM_COLS/2+3].setLabel("!");
 }
 public boolean isValid(int r, int c)
 {
