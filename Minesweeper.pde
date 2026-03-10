@@ -41,12 +41,10 @@ public boolean isWon()
 {
 for(int i = 0; i < NUM_ROWS; i++){
     for (int k = 0; k < NUM_COLS; k++)
-        if(!mines.contains(buttons[i][k]) && !buttons[r][c].clicked)
+        if(!mines.contains(buttons[i][k]) && !buttons[i][k].clicked)
             return false;
-}
-for(int i = 0; i < mines.size(); i++)
-    if(!mines.get(i).isFlagged())
-        return false;
+        if(mines.contains(buttons[i][k] && !buttons[i][k].isFlagged)
+            return false;
 return true;
 }
 public void displayLosingMessage()
