@@ -39,11 +39,11 @@ public void draw ()
 }
 public boolean isWon()
 {
-for(int i = 0; i < NUM_ROWS; i++){
+for(int i = 0; i < NUM_ROWS; i++)
     for (int k = 0; k < NUM_COLS; k++)
         if(!mines.contains(buttons[i][k]) && !buttons[i][k].clicked)
             return false;
-        if(mines.contains(buttons[i][k] && !buttons[i][k].isFlagged)
+        if(mines.contains(buttons[i][k]) && !buttons[i][k].isFlagged)
             return false;
 return true;
 }
